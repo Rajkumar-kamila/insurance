@@ -1,746 +1,1043 @@
-
 @extends('includes.main')
 @section('main-container')
-        
     
-    <!-- Page Body Start  -->
-    <div class="page-body">
-      <div class="grid grid-cols-12 gap-card-gap"> 
-        <div class="col-span-3 ratio_109 4xl:col-span-4 lg:col-span-5 2lg:col-span-6 lg:-order-2 2md:col-span-12">
-          <!-- Welcome Card -->
-          <div class="card p-card-space before:!pt-0 bg-primary relative common-animate-main 4xl:h-[390px] xl:h-full gap-0 common-animate-main welcome-card-main h-[410px] "> 
-            <div>
-              <div class="flex items-center gap-2 justify-between"> <span class="flex items-center gap-2 text-3xl font-semibold text-white 3sm:text-lg 5xl:text-2xl">Hello, Amirreza<img class="w-[22px] h-[22px]" src="assets/images/waving-hand.png" alt="waving-hand"></span>
-                <div class="dropdown">
-                  <button class="before:absolute flex items-center justify-center cursor-pointer before:inset-0 before:bg-white before:opacity-[34%] before:rounded-full p-[5px]"> 
-                    <svg class="w-[18px] h-[18px] stroke-white"> 
-                      <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu !w-36 right-0 !top-8">
-                    <ul> 
-                      <li><a href="profile.html">Profile Setting  </a></li>
-                      <li><a href="email.html">Message</a></li>
-                      <li><a href="todo-app.html">Taskboard  </a></li>
-                    </ul>
-                  </div>
+    <div class="nk-content ">
+        <div class="container-fluid">
+            <div class="nk-content-inner">
+                <div class="nk-content-body">
+                    <div class="nk-block-head nk-block-head-sm">
+                        <div class="nk-block-between">
+                            <div class="nk-block-head-content">
+                                <h3 class="nk-block-title page-title">Insurance Analytics</h3>
+                                <div class="nk-block-des text-soft">
+                                    <p>Welcome to Insurance Dashboard.</p>
+                                </div>
+                            </div>
+                            <div class="nk-block-head-content">
+                                <div class="toggle-wrap nk-block-tools-toggle">
+                                    <a href="#"
+                                        class="btn btn-icon btn-trigger toggle-expand me-n1"
+                                        data-target="pageMenu">
+                                        <em class="icon ni ni-more-v"></em>
+                                    </a>
+                                    <div class="toggle-expand-content" data-content="pageMenu">
+                                        <ul class="nk-block-tools g-3">
+                                            <li>
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle btn btn-white btn-dim btn-outline-light"
+                                                        data-bs-toggle="dropdown">
+                                                        <em
+                                                            class="d-none d-sm-inline icon ni ni-calender-date"></em>
+                                                        <span>
+                                                            <span class="d-none d-md-inline">Last</span>
+                                                            30 Days</span>
+                                                        <em class="dd-indc icon ni ni-chevron-right"></em>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-end">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>Last 30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>Last 6 Months</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>Last 1 Years</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="nk-block-tools-opt">
+                                                <a href="#" class="btn btn-primary">
+                                                    <em class="icon ni ni-reports"></em>
+                                                    <span>Reports</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nk-block">
+                        <div class="row g-gs">
+                            <div class="col-lg-7 col-xxl-6">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group pb-3 g-2">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Audience Overview</h6>
+                                                <p>How have your users, sessions, bounce rate metrics
+                                                    trended.</p>
+                                            </div>
+                                            <div class="card-tools shrink-0 d-none d-sm-block">
+                                                <ul class="nav nav-switch-s2 nav-tabs bg-white">
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link">7 D</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link active">1
+                                                            M</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a href="#" class="nav-link">3 M</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="analytic-ov">
+                                            <div class="analytic-data-group analytic-ov-group g-3">
+                                                <div class="analytic-data analytic-ov-data">
+                                                    <div class="title">Users</div>
+                                                    <div class="amount">2.57K</div>
+                                                    <div class="change up">
+                                                        <em class="icon ni ni-arrow-long-up"></em>12.37%
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-ov-data">
+                                                    <div class="title">Sessions</div>
+                                                    <div class="amount">3.98K</div>
+                                                    <div class="change up">
+                                                        <em class="icon ni ni-arrow-long-up"></em>47.74%
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-ov-data">
+                                                    <div class="title">Users</div>
+                                                    <div class="amount">28.49%</div>
+                                                    <div class="change down">
+                                                        <em class="icon ni ni-arrow-long-down"></em>12.37%
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-ov-data">
+                                                    <div class="title">Users</div>
+                                                    <div class="amount">7m 28s</div>
+                                                    <div class="change down">
+                                                        <em class="icon ni ni-arrow-long-down"></em>0.35%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="analytic-ov-ck">
+                                                <canvas class="analytics-line-large"
+                                                    id="analyticOvData"></canvas>
+                                            </div>
+                                            <div class="chart-label-group ms-5">
+                                                <div class="chart-label">01 Jan, 2020</div>
+                                                <div class="chart-label d-none d-sm-block">15 Jan, 2020
+                                                </div>
+                                                <div class="chart-label">30 Jan, 2020</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xxl-3">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group align-start pb-3 g-2">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Active Users</h6>
+                                                <p>How do your users visited in the time.</p>
+                                            </div>
+                                            <div class="card-tools">
+                                                <em class="card-hint icon ni ni-help"
+                                                    data-bs-toggle="tooltip" data-bs-placement="left"
+                                                    title="Users of this month"></em>
+                                            </div>
+                                        </div>
+                                        <div class="analytic-au">
+                                            <div class="analytic-data-group analytic-au-group g-3">
+                                                <div class="analytic-data analytic-au-data">
+                                                    <div class="title">Monthly</div>
+                                                    <div class="amount">9.28K</div>
+                                                    <div class="change up">
+                                                        <em class="icon ni ni-arrow-long-up"></em>4.63%
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-au-data">
+                                                    <div class="title">Weekly</div>
+                                                    <div class="amount">2.69K</div>
+                                                    <div class="change down">
+                                                        <em class="icon ni ni-arrow-long-down"></em>1.92%
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-au-data">
+                                                    <div class="title">Daily (Avg)</div>
+                                                    <div class="amount">0.94K</div>
+                                                    <div class="change up">
+                                                        <em class="icon ni ni-arrow-long-up"></em>3.45%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="analytic-au-ck">
+                                                <canvas class="analytics-au-chart"
+                                                    id="analyticAuData"></canvas>
+                                            </div>
+                                            <div class="chart-label-group">
+                                                <div class="chart-label">01 Jan, 2020</div>
+                                                <div class="chart-label">30 Jan, 2020</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-xxl-3">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group align-start pb-3 g-2">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Website Performance</h6>
+                                                <p>How has performend this month.</p>
+                                            </div>
+                                            <div class="card-tools">
+                                                <em class="card-hint icon ni ni-help"
+                                                    data-bs-toggle="tooltip" data-bs-placement="left"
+                                                    title="Performance of this month"></em>
+                                            </div>
+                                        </div>
+                                        <div class="analytic-wp">
+                                            <div class="analytic-wp-group g-3">
+                                                <div class="analytic-data analytic-wp-data">
+                                                    <div class="analytic-wp-graph">
+                                                        <div class="title">Bounce Rate
+                                                            <span>(avg)</span>
+                                                        </div>
+                                                        <div class="analytic-wp-ck">
+                                                            <canvas class="analytics-line-small"
+                                                                id="BounceRateData"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="analytic-wp-text">
+                                                        <div class="amount amount-sm">23.59%</div>
+                                                        <div class="change up">
+                                                            <em class="icon ni ni-arrow-long-up"></em>4.5%
+                                                        </div>
+                                                        <div class="subtitle">vs. last month</div>
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-wp-data">
+                                                    <div class="analytic-wp-graph">
+                                                        <div class="title">Pageviews
+                                                            <span>(avg)</span>
+                                                        </div>
+                                                        <div class="analytic-wp-ck">
+                                                            <canvas class="analytics-line-small"
+                                                                id="PageviewsData"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="analytic-wp-text">
+                                                        <div class="amount amount-sm">5.48</div>
+                                                        <div class="change down">
+                                                            <em
+                                                                class="icon ni ni-arrow-long-down"></em>-1.48%
+                                                        </div>
+                                                        <div class="subtitle">vs. last month</div>
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-wp-data">
+                                                    <div class="analytic-wp-graph">
+                                                        <div class="title">New Users
+                                                            <span>(avg)</span>
+                                                        </div>
+                                                        <div class="analytic-wp-ck">
+                                                            <canvas class="analytics-line-small"
+                                                                id="NewUsersData"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="analytic-wp-text">
+                                                        <div class="amount amount-sm">549</div>
+                                                        <div class="change up">
+                                                            <em class="icon ni ni-arrow-long-up"></em>6.8%
+                                                        </div>
+                                                        <div class="subtitle">vs. last month</div>
+                                                    </div>
+                                                </div>
+                                                <div class="analytic-data analytic-wp-data">
+                                                    <div class="analytic-wp-graph">
+                                                        <div class="title">Time on Site
+                                                            <span>(avg)</span>
+                                                        </div>
+                                                        <div class="analytic-wp-ck">
+                                                            <canvas class="analytics-line-small"
+                                                                id="TimeOnSiteData"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="analytic-wp-text">
+                                                        <div class="amount amount-sm">3m 35s</div>
+                                                        <div class="change up">
+                                                            <em class="icon ni ni-arrow-long-up"></em>1.4%
+                                                        </div>
+                                                        <div class="subtitle">vs. last month</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-xxl-6">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner mb-n2">
+                                        <div class="card-title-group">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Traffic Channel</h6>
+                                                <p>Top traffic channels metrics.</p>
+                                            </div>
+                                            <div class="card-tools">
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle dropdown-indicator btn btn-sm btn-outline-light btn-white"
+                                                        data-bs-toggle="dropdown">30 Days</a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>7 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>15 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nk-tb-list is-loose traffic-channel-table">
+                                        <div class="nk-tb-item nk-tb-head">
+                                            <div class="nk-tb-col nk-tb-channel">
+                                                <span>Channel</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-sessions">
+                                                <span>Sessions</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-prev-sessions">
+                                                <span>Prev Sessions</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-change">
+                                                <span>Change</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-trend tb-col-sm text-end">
+                                                <span>Trend</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-channel">
+                                                <span class="tb-lead">Organic Search</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>4,305</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-prev-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>4,129</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-change">
+                                                <span class="tb-sub">
+                                                    <span>4.29%</span>
+                                                    <span class="change up">
+                                                        <em class="icon ni ni-arrow-long-up"></em>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-trend text-end">
+                                                <div class="traffic-channel-ck ms-auto">
+                                                    <canvas class="analytics-line-small"
+                                                        id="OrganicSearchData"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-channel">
+                                                <span class="tb-lead">Social Media</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>859</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-prev-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>936</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-change">
+                                                <span class="tb-sub">
+                                                    <span>15.8%</span>
+                                                    <span class="change down">
+                                                        <em class="icon ni ni-arrow-long-down"></em>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-trend text-end">
+                                                <div class="traffic-channel-ck ms-auto">
+                                                    <canvas class="analytics-line-small"
+                                                        id="SocialMediaData"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-channel">
+                                                <span class="tb-lead">Referrals</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>482</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-prev-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>793</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-change">
+                                                <span class="tb-sub">
+                                                    <span>41.3%</span>
+                                                    <span class="change down">
+                                                        <em class="icon ni ni-arrow-long-down"></em>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-trend text-end">
+                                                <div class="traffic-channel-ck ms-auto">
+                                                    <canvas class="analytics-line-small"
+                                                        id="ReferralsData"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col nk-tb-channel">
+                                                <span class="tb-lead">Others</span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>138</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-prev-sessions">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>97</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-change">
+                                                <span class="tb-sub">
+                                                    <span>12.6%</span>
+                                                    <span class="change up">
+                                                        <em class="icon ni ni-arrow-long-up"></em>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col nk-tb-trend text-end">
+                                                <div class="traffic-channel-ck ms-auto">
+                                                    <canvas class="analytics-line-small"
+                                                        id="OthersData"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xxl-3">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Traffic Channel</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle dropdown-indicator btn btn-sm btn-outline-light btn-white"
+                                                        data-bs-toggle="dropdown">30 Days</a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>7 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>15 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="traffic-channel">
+                                            <div class="traffic-channel-doughnut-ck">
+                                                <canvas class="analytics-doughnut"
+                                                    id="TrafficChannelDoughnutData"></canvas>
+                                            </div>
+                                            <div class="traffic-channel-group g-2">
+                                                <div class="traffic-channel-data">
+                                                    <div class="title">
+                                                        <span class="dot dot-lg sq"
+                                                            data-bg="#9cabff"></span>
+                                                        <span>Organic Search</span>
+                                                    </div>
+                                                    <div class="amount">4,305
+                                                        <small>58.63%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="traffic-channel-data">
+                                                    <div class="title">
+                                                        <span class="dot dot-lg sq"
+                                                            data-bg="#b8acff"></span>
+                                                        <span>Social Media</span>
+                                                    </div>
+                                                    <div class="amount">859
+                                                        <small>23.94%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="traffic-channel-data">
+                                                    <div class="title">
+                                                        <span class="dot dot-lg sq"
+                                                            data-bg="#ffa9ce"></span>
+                                                        <span>Referrals</span>
+                                                    </div>
+                                                    <div class="amount">482
+                                                        <small>12.94%</small>
+                                                    </div>
+                                                </div>
+                                                <div class="traffic-channel-data">
+                                                    <div class="title">
+                                                        <span class="dot dot-lg sq"
+                                                            data-bg="#f9db7b"></span>
+                                                        <span>Others</span>
+                                                    </div>
+                                                    <div class="amount">138
+                                                        <small>4.49%</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xxl-3">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner">
+                                        <div class="card-title-group">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Users by Country</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle dropdown-indicator btn btn-sm btn-outline-light btn-white"
+                                                        data-bs-toggle="dropdown">30 Days</a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>7 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>15 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="analytics-map">
+                                            <div class="vector-map" id="worldMap"></div>
+                                            <table class="analytics-map-data-list">
+                                                <tr class="analytics-map-data">
+                                                    <td class="country">United States</td>
+                                                    <td class="amount">12,094</td>
+                                                    <td class="percent">23.54%</td>
+                                                </tr>
+                                                <tr class="analytics-map-data">
+                                                    <td class="country">India</td>
+                                                    <td class="amount">7,984</td>
+                                                    <td class="percent">7.16%</td>
+                                                </tr>
+                                                <tr class="analytics-map-data">
+                                                    <td class="country">Turkey</td>
+                                                    <td class="amount">6,338</td>
+                                                    <td class="percent">6.54%</td>
+                                                </tr>
+                                                <tr class="analytics-map-data">
+                                                    <td class="country">Bangladesh</td>
+                                                    <td class="amount">4,749</td>
+                                                    <td class="percent">5.29%</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-6">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner mb-n2">
+                                        <div class="card-title-group">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Browser Used</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle dropdown-indicator btn btn-sm btn-outline-light btn-white"
+                                                        data-bs-toggle="dropdown">30 Days</a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>7 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>15 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nk-tb-list is-loose">
+                                        <div class="nk-tb-item nk-tb-head">
+                                            <div class="nk-tb-col">
+                                                <span>Browser</span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span>Users</span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <span>% Users</span>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span>Bounce Rate</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <div class="icon-text">
+                                                    <em class="text-primary icon ni ni-globe"></em>
+                                                    <span class="tb-lead">Google Chrome</span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>1,641</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div
+                                                    class="progress progress-md progress-alt bg-transparent">
+                                                    <div class="progress-bar" data-progress="72.84">
+                                                    </div>
+                                                    <div class="progress-amount">72.84%</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span class="tb-sub">22.62%</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <div class="icon-text">
+                                                    <em class="text-danger icon ni ni-globe"></em>
+                                                    <span class="tb-lead">Mozilla Firefox</span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>497</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div
+                                                    class="progress progress-md progress-alt bg-transparent">
+                                                    <div class="progress-bar" data-progress="7.93">
+                                                    </div>
+                                                    <div class="progress-amount">7.93%</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span class="tb-sub">20.49%</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <div class="icon-text">
+                                                    <em class="text-info icon ni ni-globe"></em>
+                                                    <span class="tb-lead">Safari Browser</span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>187</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div
+                                                    class="progress progress-md progress-alt bg-transparent">
+                                                    <div class="progress-bar" data-progress="4.87">
+                                                    </div>
+                                                    <div class="progress-amount">4.87%</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span class="tb-sub">21.34%</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <div class="icon-text">
+                                                    <em class="text-orange icon ni ni-globe"></em>
+                                                    <span class="tb-lead">UC Browser</span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>96</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div
+                                                    class="progress progress-md progress-alt bg-transparent">
+                                                    <div class="progress-bar" data-progress="2.46">
+                                                    </div>
+                                                    <div class="progress-amount">2.46%</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span class="tb-sub">20.33%</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <div class="icon-text">
+                                                    <em class="text-blue icon ni ni-globe"></em>
+                                                    <span class="tb-lead">Edge / IE</span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>28</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div
+                                                    class="progress progress-md progress-alt bg-transparent">
+                                                    <div class="progress-bar" data-progress="1.14">
+                                                    </div>
+                                                    <div class="progress-amount">1.14%</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span class="tb-sub">21.34%</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <div class="icon-text">
+                                                    <em class="text-purple icon ni ni-globe"></em>
+                                                    <span class="tb-lead">Other Browser</span>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>683</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col">
+                                                <div
+                                                    class="progress progress-md progress-alt bg-transparent">
+                                                    <div class="progress-bar" data-progress="10.76">
+                                                    </div>
+                                                    <div class="progress-amount">10.76%</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-tb-col tb-col-sm text-end">
+                                                <span class="tb-sub">20.49%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xxl-3">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner mb-n2">
+                                        <div class="card-title-group">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Pages View by Users</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle dropdown-indicator btn btn-sm btn-outline-light btn-white"
+                                                        data-bs-toggle="dropdown">30 Days</a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>7 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>15 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nk-tb-list is-compact">
+                                        <div class="nk-tb-item nk-tb-head">
+                                            <div class="nk-tb-col">
+                                                <span>Page</span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span>Page Views</span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>2,879</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/subscription/index.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>2,094</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/general/index.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>1,634</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/crypto/index.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>1,497</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/invest/index.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>1,349</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/subscription/profile.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>984</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/general/index-crypto.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>879</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/apps/messages/index.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>598</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="nk-tb-item">
+                                            <div class="nk-tb-col">
+                                                <span class="tb-sub">
+                                                    <span>/general/index-crypto.html</span>
+                                                </span>
+                                            </div>
+                                            <div class="nk-tb-col text-end">
+                                                <span class="tb-sub tb-amount">
+                                                    <span>436</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xxl-3">
+                                <div class="card card-bordered h-100">
+                                    <div class="card-inner h-100 stretch flex-column">
+                                        <div class="card-title-group">
+                                            <div class="card-title card-title-sm">
+                                                <h6 class="title">Sessions by Device</h6>
+                                            </div>
+                                            <div class="card-tools">
+                                                <div class="drodown">
+                                                    <a href="#"
+                                                        class="dropdown-toggle dropdown-indicator btn btn-sm btn-outline-light btn-white"
+                                                        data-bs-toggle="dropdown">30 Days</a>
+                                                    <div
+                                                        class="dropdown-menu dropdown-menu-end dropdown-menu-xs">
+                                                        <ul class="link-list-opt no-bdr">
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>7 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>15 Days</span>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#">
+                                                                    <span>30 Days</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="device-status my-auto">
+                                            <div class="device-status-ck">
+                                                <canvas class="analytics-doughnut"
+                                                    id="deviceStatusData"></canvas>
+                                            </div>
+                                            <div class="device-status-group">
+                                                <div class="device-status-data">
+                                                    <em data-color="#798bff"
+                                                        class="icon ni ni-monitor"></em>
+                                                    <div class="title">Desktop</div>
+                                                    <div class="amount">84.5%</div>
+                                                    <div class="change up text-danger">
+                                                        <em class="icon ni ni-arrow-long-up"></em>4.5%
+                                                    </div>
+                                                </div>
+                                                <div class="device-status-data">
+                                                    <em data-color="#baaeff"
+                                                        class="icon ni ni-mobile"></em>
+                                                    <div class="title">Mobile</div>
+                                                    <div class="amount">14.2%</div>
+                                                    <div class="change up text-danger">
+                                                        <em class="icon ni ni-arrow-long-up"></em>133.2%
+                                                    </div>
+                                                </div>
+                                                <div class="device-status-data">
+                                                    <em data-color="#7de1f8"
+                                                        class="icon ni ni-tablet"></em>
+                                                    <div class="title">Tablet</div>
+                                                    <div class="amount">1.3%</div>
+                                                    <div class="change up text-danger">
+                                                        <em class="icon ni ni-arrow-long-up"></em>25.3%
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <p class="text-xs font-semibold text-content-white leading-[22px] max-w-[285px] mt-1 2md:line-clamp-2 sm:line-clamp-none">Welcome to the Govo family! we are glad that you are visite this dashboard.</p>
-              <button class="mt-6 sm:mt-4 rounded-5 py-[8px] px-4 bg-white text-xs font-bold text-title dark:bg-sidebar-dark2 hover:text-primary">What New!</button>
             </div>
-            <div class="relative bg-img"> <img class="img-fluid welcome-img" src="https://admin.pixelstrap.com/govo/assets/images/svg/1.svg" alt="welcome-image"><img class="w-[28px] h-[28px] common-animate animate-ping top-[14px] 6xl:top-[30px] 4xl:top-[14px] absolute left-[10%] 2md:left-[24%] sm:left-[10%] animate__animated animate__infinite animate__shakeY animate__slower" src="https://admin.pixelstrap.com/govo/assets/images/svg/done.svg" alt="welcome-done-image"><img class="w-24 h-w-24 common-animate animate-ping top-[-10%] 6xl:top-[4%] 4xl:top-[-10%] absolute right-[2%] 2md:right-[17%] sm:right-[2%] left-unset  animate__animated animate__infinite animate__shakeY animate__slower" src="https://admin.pixelstrap.com/govo/assets/images/svg/rocket.svg" alt="welcome-rocket-image"></div>
-          </div>
         </div>
-        <div class="col-span-6 4xl:col-span-8 lg:col-span-12 lg:-order-1">
-          <div class="card"> 
-            <div class="card-header transaction-history"> 
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Reports</h3>
-                <div class="custom-select select-style-1"> 
-                  <select class="capitalize">
-                    <option>Yearly</option>
-                    <option>Monthly</option>
-                    <option>Weekly</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"> 
-              <div class="overflow-auto custom-scroll">
-                <table class="table"> 
-                  <thead> 
-                    <tr> 
-                      <th>Item Name</th>
-                      <th>Date And Time</th>
-                      <th>Amount</th>
-                      <th>invoice no.</th>
-                      <th>Status</th>
-                      <th>payment</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> 
-                        <div class="flex items-center gap-[.5625rem]"><img class="w-10 h-10 rounded-full" src="assets/images/product/1.jpg" alt="Samsung TV"><a href="product.html">
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Samsung TV</h4><span class="block mt-1 font-semibold text-2xs text-content">Item Sold</span></a></div>
-                      </td>
-                      <td class="min-w-[7.5rem]"> 
-                        <div> 
-                          <h4 class="text-xs font-semibold text-title">Jan 25, 2023</h4><span class="block mt-1 font-semibold text-2xs text-content">Item Sold</span>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-success">₹251 USD</h4>
-                      </td>
-                      <td class="min-w-[6.5rem]"> 
-                        <h4 class="text-xs font-semibold uppercase text-title">#px0101</h4>
-                      </td>
-                      <td class="min-w-[4.6875rem]"> 
-                        <div class="progress-bar progress-sm max-w-[3.375rem]">
-                          <div class="bg-success" style="width:50%"> </div>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title">Paypal</h4>
-                      </td>
-                    </tr>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> 
-                        <div class="flex items-center gap-[.5625rem]"><img class="w-10 h-10 rounded-full" src="assets/images/product/2.jpg" alt="Spring Bed"><a href="product.html">
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Spring Bed</h4><span class="block mt-1 font-semibold text-2xs text-content">Bought item</span></a></div>
-                      </td>
-                      <td class="min-w-[7.5rem]"> 
-                        <div> 
-                          <h4 class="text-xs font-semibold text-title">Feb 20, 2023</h4><span class="block mt-1 font-semibold text-2xs text-content">Bought item</span>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-danger">₹350 USD</h4>
-                      </td>
-                      <td class="min-w-[6.5rem]"> 
-                        <h4 class="text-xs font-semibold uppercase text-title">#rf304f</h4>
-                      </td>
-                      <td class="min-w-[4.6875rem]"> 
-                        <div class="progress-bar progress-sm max-w-[3.375rem]">
-                          <div class="bg-danger" style="width:70%"> </div>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title">Credit Card</h4>
-                      </td>
-                    </tr>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> 
-                        <div class="flex items-center gap-[.5625rem]"><img class="w-10 h-10 rounded-full" src="assets/images/product/3.jpg" alt="Long Dress"><a href="product.html">
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Long Dress</h4><span class="block mt-1 font-semibold text-2xs text-content">Bought item</span></a></div>
-                      </td>
-                      <td class="min-w-[7.5rem]"> 
-                        <div> 
-                          <h4 class="text-xs font-semibold text-title">Feb 25, 2023</h4><span class="block mt-1 font-semibold text-2xs text-content">Bought item</span>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-success">₹240 USD</h4>
-                      </td>
-                      <td class="min-w-[6.5rem]"> 
-                        <h4 class="text-xs font-semibold uppercase text-title">#dnj480</h4>
-                      </td>
-                      <td class="min-w-[4.6875rem]"> 
-                        <div class="progress-bar progress-sm max-w-[3.375rem]">
-                          <div class="bg-success" style="width:40%"> </div>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title">Paypal</h4>
-                      </td>
-                    </tr>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> 
-                        <div class="flex items-center gap-[.5625rem]"><img class="w-10 h-10 rounded-full" src="assets/images/product/4.jpg" alt="Phillip Lightbulb"><a href="product.html">
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Phillip Lightbulb</h4><span class="block mt-1 font-semibold text-2xs text-content">Item Sold</span></a></div>
-                      </td>
-                      <td class="min-w-[7.5rem]"> 
-                        <div> 
-                          <h4 class="text-xs font-semibold text-title">March 27, 2023</h4><span class="block mt-1 font-semibold text-2xs text-content">Item Sold</span>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-danger">₹200 USD</h4>
-                      </td>
-                      <td class="min-w-[6.5rem]"> 
-                        <h4 class="text-xs font-semibold uppercase text-title">#g189d0</h4>
-                      </td>
-                      <td class="min-w-[4.6875rem]"> 
-                        <div class="progress-bar progress-sm max-w-[3.375rem]">
-                          <div class="bg-danger" style="width:60%"> </div>
-                        </div>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title">Credit Card</h4>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-3 4xl:col-span-4 lg:col-span-12">
-          <div class="grid grid-cols-2 gap-card-gap"> 
-            <div class="col-span-2 lg:col-span-1 2md:col-span-2">
-              <div class="card transition duration-500 ease-in delay-400 hover:shadow-sm hover:-translate-y-1 hover:scale-45">
-                <div class="card-body"> 
-                  <div> 
-                    <div class="flex items-center justify-between">
-                      <div>
-                        <h3 class="text-lg font-bold leading-none text-title">Revenue</h3>
-                        <h4 class="flex items-center mt-[12px] text-2xl 5xl:text-lg 4xl:text-base font-extrabold text-title gap-[7px]">₹4,875<span class="flex items-center gap-1 text-3xs font-semibold text-success">36.28%
-                            <svg class="w-[6px] h-[6px] -rotate-180 fill-success stroke-success"> 
-                              <use href="{{ asset('assets/svg/sprite.svg#Fill-Arrow')}}"> </use>
-                            </svg></span></h4>
-                      </div>
-                      <div class="avatar-group -space-x-6 justify-center">
-                        <div class="avatar w-12 h-12 5xl:w-11 5xl:h-11 border-[2px] border-white dark:border-border-dark hover:translate-y-[-5px] hover:transition-all hover:ease translate-y-0">
-                          <div class="h-12"><img src="assets/images/avatar/9.jpg" alt="avatar"/></div>
-                        </div>
-                        <div class="avatar w-12 h-12 5xl:w-11 5xl:h-11 border-[2px] border-white dark:border-border-dark hover:translate-y-[-5px] hover:transition-all hover:ease translate-y-0">
-                          <div class="h-12"><img src="assets/images/avatar/12.jpg" alt="avatar"/></div>
-                        </div>
-                        <div class="avatar placeholder w-12 h-12 5xl:w-11 5xl:h-11 border-[2px] bg-gray-light dark:bg-sidebar-dark2 border-white dark:border-border-dark hover:translate-y-[-5px] hover:transition-all hover:ease translate-y-0">
-                          <div><span class="text-xs font-bold text-title">26+</span></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-[17px]" id="revenueChart"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-span-2 lg:col-span-1 2md:col-span-2">
-              <div class="card transition duration-500 ease-in delay-400 hover:shadow-sm hover:-translate-y-1 hover:scale-45">
-                <div class="card-header">
-                  <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                    <h3 class="text-lg font-bold text-title leading-none">Claims</h3>
-                    <div class="dropdown on-hover-show">
-                      <button class="flex rounded-full items-center justify-center p-[5px] bg-gray-light dark:bg-sidebar-dark2"> 
-                        <svg class="w-[18px] h-[18px] stroke-title"> 
-                          <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                        </svg>
-                      </button>
-                      <div class="dropdown-menu">
-                        <ul>
-                          <li><a href="javascript:void(0)">Yearly</a></li>
-                          <li><a href="javascript:void(0)">Monthly</a></li>
-                          <li><a href="javascript:void(0)">Weekly</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-body"> 
-                  <div class="relative"> 
-                    <div class="flex items-center justify-between">
-                      <div class="flex-[0_1_50%]">
-                        <div> 
-                          <h4 class="flex items-center text-2xl  5xl:text-lg 4xl:text-base font-extrabold text-title gap-[7px]">₹4,875</h4><span class="font-semibold text-4xs text-content">Total Expense</span>
-                        </div>
-                        <p class="line-clamp-3 3sm:line-clamp-2 mt-[18px] font-normal text-xs text-title">Profit is grow 45% more than last Month continue increasing</p>
-                      </div>
-                      <div id="earningChart"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-6 4xl:col-span-8 lg:col-span-12 lg:-order-1">
-          <div class="card">  
-            <div class="card-header">
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Customers Information</h3>
-                <div class="dropdown on-hover-show">
-                  <button class="flex rounded-full items-center justify-center p-[5px] bg-gray-light dark:bg-sidebar-dark2"> 
-                    <svg class="w-[18px] h-[18px] stroke-title"> 
-                      <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <ul>
-                      <li><a href="javascript:void(0)">Completed</a></li>
-                      <li><a href="javascript:void(0)">Pending</a></li>
-                      <li><a href="javascript:void(0)">1 Day Ago</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"> 
-              <div class="overflow-auto custom-scroll"> 
-                <table class="table"> 
-                  <thead> 
-                    <tr> 
-                      <th>Name</th>
-                      <th>Email Address</th>
-                      <th>Status</th>
-                      <th>Role</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody class="user-info">
-                    <tr class="user-item group">
-                      <td class="min-w-[210px]"> 
-                        <div class="flex items-center gap-2">
-                          <label class="checkbox w-[15px] h-[15px]">
-                            <input type="checkbox"><span class="checkbox-indicator"><i data-feather="check"></i></span>
-                          </label>
-                          <div class="flex items-center gap-[9px]"><img class="sm:w-[40px] sm:h-[40px] 5xl:w-[43px] 5xl:h-[43px] w-[45px] h-[45px] rounded-full object-cover" src="assets/images/avatar/1.jpg" alt="Dmitriy Groshev"><a href="user-profile.html">
-                              <h4 class="text-xs font-semibold text-title group-hover:text-primary">Dmitriy Groshev</h4><span class="block mt-1 font-semibold text-2xs text-content">United Kingdom</span></a></div>
-                        </div>
-                      </td>
-                      <td class="min-w-[120px]">
-                        <div> <a class="text-xs font-semibold text-title" href="mail:tohello123@dribbble.com">hello123@dribbble.com</a></div>
-                      </td>
-                      <td class="min-w-[75px]"> 
-                        <h4 class="text-xs font-semibold text-success">Invited</h4>
-                      </td>
-                      <td class="min-w-[140px]"> 
-                        <h4 class="text-xs font-semibold text-title">Interface Designer</h4>
-                      </td>
-                      <td class="min-w-[50px] text-right"> 
-                        <div class="dropdown on-hover-show inline-flex justify-end ">
-                          <button class="group"> 
-                            <svg class="w-[18px] h-[18px] stroke-title"> 
-                              <use href="{{ asset('assets/svg/sprite.svg#Dote-h')}}"> </use>
-                            </svg>
-                          </button>
-                          <div class="dropdown-menu !right-0 !left-unset ">
-                            <ul>
-                              <li class="group"> <a href="edit-profile.html">
-                                  <svg class="group-hover:stroke-primary w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Edit-Square')}}"> </use>
-                                  </svg></a></li>
-                              <li class="group"> <a href="javascript:void(0)">
-                                  <svg class="group-hover:stroke-primary remove-user w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Delete')}}"> </use>
-                                  </svg></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="user-item group">
-                      <td class="min-w-[210px]"> 
-                        <div class="flex items-center gap-2">
-                          <label class="checkbox w-[15px] h-[15px]">
-                            <input type="checkbox" checked><span class="checkbox-indicator"><i data-feather="check"></i></span>
-                          </label>
-                          <div class="flex items-center gap-[9px]"><img class="sm:w-[40px] sm:h-[40px] 5xl:w-[43px] 5xl:h-[43px] w-[45px] h-[45px] rounded-full object-cover" src="assets/images/avatar/2.jpg" alt="Patrick Beverley"><a href="user-profile.html">
-                              <h4 class="text-xs font-semibold text-title group-hover:text-primary">Patrick Beverley</h4><span class="block mt-1 font-semibold text-2xs text-content">Australia</span></a></div>
-                        </div>
-                      </td>
-                      <td class="min-w-[120px]">
-                        <div> <a class="text-xs font-semibold text-title" href="mail:tobeverley.lac@gmail.com">beverley.lac@gmail.com</a></div>
-                      </td>
-                      <td class="min-w-[75px]"> 
-                        <h4 class="text-xs font-semibold text-danger">Active</h4>
-                      </td>
-                      <td class="min-w-[140px]"> 
-                        <h4 class="text-xs font-semibold text-title">Interface Designer</h4>
-                      </td>
-                      <td class="min-w-[50px] text-right"> 
-                        <div class="dropdown on-hover-show inline-flex justify-end ">
-                          <button class="group"> 
-                            <svg class="w-[18px] h-[18px] stroke-title"> 
-                              <use href="{{ asset('assets/svg/sprite.svg#Dote-h')}}"> </use>
-                            </svg>
-                          </button>
-                          <div class="dropdown-menu !right-0 !left-unset ">
-                            <ul>
-                              <li class="group"> <a href="edit-profile.html">
-                                  <svg class="group-hover:stroke-primary w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Edit-Square')}}"> </use>
-                                  </svg></a></li>
-                              <li class="group"> <a href="javascript:void(0)">
-                                  <svg class="group-hover:stroke-primary remove-user w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Delete')}}"> </use>
-                                  </svg></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="user-item group">
-                      <td class="min-w-[210px]"> 
-                        <div class="flex items-center gap-2">
-                          <label class="checkbox w-[15px] h-[15px]">
-                            <input type="checkbox"><span class="checkbox-indicator"><i data-feather="check"></i></span>
-                          </label>
-                          <div class="flex items-center gap-[9px]"><img class="sm:w-[40px] sm:h-[40px] 5xl:w-[43px] 5xl:h-[43px] w-[45px] h-[45px] rounded-full object-cover" src="assets/images/avatar/3.jpg" alt="Kevin Greem"><a href="user-profile.html">
-                              <h4 class="text-xs font-semibold text-title group-hover:text-primary">Kevin Greem</h4><span class="block mt-1 font-semibold text-2xs text-content">United Kingdom</span></a></div>
-                        </div>
-                      </td>
-                      <td class="min-w-[120px]">
-                        <div> <a class="text-xs font-semibold text-title" href="mail:togreen4502@gmail.com">green4502@gmail.com</a></div>
-                      </td>
-                      <td class="min-w-[75px]"> 
-                        <h4 class="text-xs font-semibold text-success">Invited</h4>
-                      </td>
-                      <td class="min-w-[140px]"> 
-                        <h4 class="text-xs font-semibold text-title">Project Manager</h4>
-                      </td>
-                      <td class="min-w-[50px] text-right"> 
-                        <div class="dropdown on-hover-show inline-flex justify-end ">
-                          <button class="group"> 
-                            <svg class="w-[18px] h-[18px] stroke-title"> 
-                              <use href="{{ asset('assets/svg/sprite.svg#Dote-h')}}"> </use>
-                            </svg>
-                          </button>
-                          <div class="dropdown-menu !right-0 !left-unset ">
-                            <ul>
-                              <li class="group"> <a href="edit-profile.html">
-                                  <svg class="group-hover:stroke-primary w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Edit-Square')}}"> </use>
-                                  </svg></a></li>
-                              <li class="group"> <a href="javascript:void(0)">
-                                  <svg class="group-hover:stroke-primary remove-user w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Delete')}}"> </use>
-                                  </svg></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="user-item group">
-                      <td class="min-w-[210px]"> 
-                        <div class="flex items-center gap-2">
-                          <label class="checkbox w-[15px] h-[15px]">
-                            <input type="checkbox"><span class="checkbox-indicator"><i data-feather="check"></i></span>
-                          </label>
-                          <div class="flex items-center gap-[9px]"><img class="sm:w-[40px] sm:h-[40px] 5xl:w-[43px] 5xl:h-[43px] w-[45px] h-[45px] rounded-full object-cover" src="assets/images/avatar/4.jpg" alt="William Barton"><a href="user-profile.html">
-                              <h4 class="text-xs font-semibold text-title group-hover:text-primary">William Barton</h4><span class="block mt-1 font-semibold text-2xs text-content">Netherlands</span></a></div>
-                        </div>
-                      </td>
-                      <td class="min-w-[120px]">
-                        <div> <a class="text-xs font-semibold text-title" href="mail:tobarton-will@gmail.com">barton-will@gmail.com</a></div>
-                      </td>
-                      <td class="min-w-[75px]"> 
-                        <h4 class="text-xs font-semibold text-danger">Active</h4>
-                      </td>
-                      <td class="min-w-[140px]"> 
-                        <h4 class="text-xs font-semibold text-title">Backend Engineer</h4>
-                      </td>
-                      <td class="min-w-[50px] text-right"> 
-                        <div class="dropdown on-hover-show inline-flex justify-end top-open">
-                          <button class="group"> 
-                            <svg class="w-[18px] h-[18px] stroke-title"> 
-                              <use href="{{ asset('assets/svg/sprite.svg#Dote-h')}}"> </use>
-                            </svg>
-                          </button>
-                          <div class="dropdown-menu !right-0 !left-unset ">
-                            <ul>
-                              <li class="group"> <a href="edit-profile.html">
-                                  <svg class="group-hover:stroke-primary w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Edit-Square')}}"> </use>
-                                  </svg></a></li>
-                              <li class="group"> <a href="javascript:void(0)">
-                                  <svg class="group-hover:stroke-primary remove-user w-[18px] h-[18px] stroke-title"> 
-                                    <use href="{{ asset('assets/svg/sprite.svg#Delete')}}"> </use>
-                                  </svg></a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-6 4xl:col-span-8 lg:col-span-12 lg:-order-1"> 
-          <div class="card"> 
-            <div class="card-header"> 
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Sell Overview</h3>
-                <div class="dropdown on-hover-show">
-                  <button class="flex rounded-full items-center justify-center p-[5px] bg-gray-light dark:bg-sidebar-dark2"> 
-                    <svg class="w-[18px] h-[18px] stroke-title"> 
-                      <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <ul>
-                      <li><a href="javascript:void(0)">Yearly</a></li>
-                      <li><a href="javascript:void(0)">Monthly</a></li>
-                      <li><a href="javascript:void(0)">Weekly</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="apex-custom-tooltip apex-tooltip-style1 mb-[-15px]" id="SellOverview"></div>
-            </div>
-          </div>
-        </div>
-        
-        
-        <!-- <div class="col-span-9 4xl:col-span-8 lg:col-span-12">
-          <div class="card"> 
-            <div class="card-header">
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Users Positions</h3>
-                <div class="flex">
-                  <button class="py-2 px-3 text-3xs font-semibold rounded-none text-title bg-gray-light dark:bg-sidebar-dark2 dark:border-border-dark  active:bg-primary active:text-white  dark:hover:bg-primary  dark:focus:bg-primary focus:text-white focus:bg-primary ">Yearly</button>
-                  <button class="py-2 px-3 text-3xs font-semibold rounded-none text-title bg-gray-light dark:bg-sidebar-dark2 dark:border-border-dark  active:bg-primary active:text-white  dark:hover:bg-primary  dark:focus:bg-primary focus:text-white focus:bg-primary ">Monthly</button>
-                  <button class="py-2 px-3 text-3xs font-semibold rounded-none text-white bg-primary active:bg-primary active:text-white  dark:hover:bg-primary  dark:focus:bg-primary focus:text-white focus:bg-primary ">Weekly</button>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"> 
-              <div class="grid grid-cols-12">  
-                <div class="col-span-2 xl:col-span-3 2md:col-span-12"> 
-                  <ul class="flex flex-col gap-[14px] 2md:gap-[8px] 2md:flex-row 2md:flex-wrap">
-                    <li>
-                      <button class="flex items-center gap-2 justify-start w-full text-xs font-semibold 2md:py-[7px] 2md:px-[7px] py-[9px] px-4 bg-gray-light dark:bg-sidebar-dark2"><span class="w-[10px] bg-primary h-[10px] rounded-[2px]"></span><span class="text-xs font-semibold text-left line-clamp-1 ">Rephrase Words</span></button>
-                    </li>
-                    <li>
-                      <button class="flex items-center gap-2 justify-start w-full text-xs font-semibold 2md:py-[7px] 2md:px-[7px] py-[9px] px-4 bg-gray-light dark:bg-sidebar-dark2"><span class="w-[10px] bg-danger h-[10px] rounded-[2px]"></span><span class="text-xs font-semibold text-left line-clamp-1 ">Presentation</span></button>
-                    </li>
-                    <li>
-                      <button class="flex items-center gap-2 justify-start w-full text-xs font-semibold 2md:py-[7px] 2md:px-[7px] py-[9px] px-4 bg-gray-light dark:bg-sidebar-dark2"><span class="w-[10px] bg-title h-[10px] rounded-[2px]"></span><span class="text-xs font-semibold text-left line-clamp-1 ">Fill the Gap</span></button>
-                    </li>
-                    <li>
-                      <button class="flex items-center gap-2 justify-start w-full text-xs font-semibold 2md:py-[7px] 2md:px-[7px] py-[9px] px-4 bg-gray-light dark:bg-sidebar-dark2"><span class="w-[10px] bg-warning h-[10px] rounded-[2px]"></span><span class="text-xs font-semibold text-left line-clamp-1 ">Drag and Drop</span></button>
-                    </li>
-                    <li>
-                      <button class="flex items-center gap-2 justify-start w-full text-xs font-semibold 2md:py-[7px] 2md:px-[7px] py-[9px] px-4 bg-gray-light dark:bg-sidebar-dark2"><span class="w-[10px] bg-primary h-[10px] rounded-[2px]"></span><span class="text-xs font-semibold text-left line-clamp-1 ">Quizz</span></button>
-                    </li>
-                    <li>
-                      <button class="flex items-center gap-2 justify-start w-full text-xs font-semibold 2md:py-[7px] 2md:px-[7px] py-[9px] px-4 bg-gray-light dark:bg-sidebar-dark2"><span class="w-[10px] bg-danger h-[10px] rounded-[2px]"></span><span class="text-xs font-semibold text-left line-clamp-1 ">Introduction</span></button>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-span-10 xl:col-span-9 2md:col-span-12"> 
-                  <div class="custom-data-label apex-custom-text 2md:-mt-[12px] ml-[-40px] 2md:ml-0" id="userPosition"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="col-span-3 4xl:col-span-4 lg:col-span-12"> 
-          <div class="card"> 
-            <div class="card-header"> 
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Sell Overview</h3>
-                <div class="dropdown on-hover-show">
-                  <button class="flex rounded-full items-center justify-center p-[5px] bg-gray-light dark:bg-sidebar-dark2"> 
-                    <svg class="w-[18px] h-[18px] stroke-title"> 
-                      <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <ul>
-                      <li><a href="javascript:void(0)">Yearly</a></li>
-                      <li><a href="javascript:void(0)">Monthly</a></li>
-                      <li><a href="javascript:void(0)">Weekly</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="apex-custom-tooltip apex-tooltip-style1 mb-[-15px]" id="SellOverview"></div>
-            </div>
-          </div>
-        </div> -->
-        <div class="col-span-6 4xl:col-span-8 lg:col-span-12">
-          <div class="card"> 
-            <div class="card-header">
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Open Invoices</h3>
-                <div class="dropdown on-hover-show">
-                  <button class="flex rounded-full items-center justify-center p-[5px] bg-gray-light dark:bg-sidebar-dark2"> 
-                    <svg class="w-[18px] h-[18px] stroke-title"> 
-                      <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <ul>
-                      <li><a href="javascript:void(0)">Yearly</a></li>
-                      <li><a href="javascript:void(0)">Monthly</a></li>
-                      <li><a href="javascript:void(0)">Weekly</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"> 
-              <div class="overflow-auto custom-scroll">
-                <table class="table equal-space">
-                  <thead> 
-                    <tr> 
-                      <th>Name</th>
-                      <th>Date</th>
-                      <th>Amount</th>
-                      <th>Status</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> <a class="flex items-center gap-[.5625rem]" href="invoice.html"><img class="2sm:w-[2.375rem] 2sm:h-[2.375rem] w-10 h-10 rounded-full object-cover " src="assets/images/avatar/1.jpg" alt="Andy Groshev">
-                          <div>
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Andy Groshev</h4>
-                          </div></a></td>
-                      <td class="min-w-[7.5rem]"> 
-                        <h4 class="text-xs font-semibold text-content group-hover:text-primary">25 Jan 2023</h4>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title group-hover:text-primary">₹2.588.00</h4>
-                      </td>
-                      <td class="min-w-[5.3125rem]"> 
-                        <h4 class="text-xs font-semibold capitalize text-success">Paid</h4>
-                      </td>
-                      <td class="min-w-[6.25rem] max-w-[6.25rem]"> 
-                        <div class="custom-select select-style-1">
-                          <select>
-                            <option value="">Copy</option>
-                            <option value="">Before Due</option>
-                            <option value="">Past Due</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> <a class="flex items-center gap-[.5625rem]" href="invoice.html"><img class="2sm:w-[2.375rem] 2sm:h-[2.375rem] w-10 h-10 rounded-full object-cover " src="assets/images/avatar/2.jpg" alt="Patrick Press">
-                          <div>
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Patrick Press</h4>
-                          </div></a></td>
-                      <td class="min-w-[7.5rem]"> 
-                        <h4 class="text-xs font-semibold text-content group-hover:text-primary">20 Feb 2023</h4>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title group-hover:text-primary">₹4.800.00</h4>
-                      </td>
-                      <td class="min-w-[5.3125rem]"> 
-                        <h4 class="text-xs font-semibold capitalize text-danger">Past Due</h4>
-                      </td>
-                      <td class="min-w-[6.25rem] max-w-[6.25rem]"> 
-                        <div class="custom-select select-style-1">
-                          <select>
-                            <option value="">Copy</option>
-                            <option value="">Before Due</option>
-                            <option value="">Past Due</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> <a class="flex items-center gap-[.5625rem]" href="invoice.html"><img class="2sm:w-[2.375rem] 2sm:h-[2.375rem] w-10 h-10 rounded-full object-cover " src="assets/images/avatar/3.jpg" alt="Kevin Greem">
-                          <div>
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Kevin Greem</h4>
-                          </div></a></td>
-                      <td class="min-w-[7.5rem]"> 
-                        <h4 class="text-xs font-semibold text-content group-hover:text-primary">26 Feb 2023</h4>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title group-hover:text-primary">₹4.678.00</h4>
-                      </td>
-                      <td class="min-w-[5.3125rem]"> 
-                        <h4 class="text-xs font-semibold capitalize text-success">Paid</h4>
-                      </td>
-                      <td class="min-w-[6.25rem] max-w-[6.25rem]"> 
-                        <div class="custom-select select-style-1">
-                          <select>
-                            <option value="">Copy</option>
-                            <option value="">Before Due</option>
-                            <option value="">Past Due</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr class="group">
-                      <td class="min-w-[11.125rem]"> <a class="flex items-center gap-[.5625rem]" href="invoice.html"><img class="2sm:w-[2.375rem] 2sm:h-[2.375rem] w-10 h-10 rounded-full object-cover " src="assets/images/avatar/4.jpg" alt="Arocca Barton">
-                          <div>
-                            <h4 class="text-xs font-semibold text-title group-hover:text-primary">Arocca Barton</h4>
-                          </div></a></td>
-                      <td class="min-w-[7.5rem]"> 
-                        <h4 class="text-xs font-semibold text-content group-hover:text-primary">10 March 2023</h4>
-                      </td>
-                      <td class="min-w-[6.25rem]"> 
-                        <h4 class="text-xs font-semibold text-title group-hover:text-primary">₹2.450.00</h4>
-                      </td>
-                      <td class="min-w-[5.3125rem]"> 
-                        <h4 class="text-xs font-semibold capitalize text-title">Private</h4>
-                      </td>
-                      <td class="min-w-[6.25rem] max-w-[6.25rem]"> 
-                        <div class="custom-select select-style-1">
-                          <select>
-                            <option value="">Copy</option>
-                            <option value="">Before Due</option>
-                            <option value="">Past Due</option>
-                          </select>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-span-3 4xl:col-span-4 lg:col-span-6 lg:-order-1 2md:col-span-12">
-          <div class="card"> 
-            <div class="card-header"> 
-              <div class="flex justify-between w-full flex-wrap gap-2 items-center">
-                <h3 class="text-lg font-bold text-title leading-none">Notification</h3>
-                <div class="dropdown on-hover-show">
-                  <button class="flex rounded-full items-center justify-center p-[5px] bg-gray-light dark:bg-sidebar-dark2"> 
-                    <svg class="w-[18px] h-[18px] stroke-title"> 
-                      <use href="{{ asset('assets/svg/sprite.svg#Setting')}}"> </use>
-                    </svg>
-                  </button>
-                  <div class="dropdown-menu">
-                    <ul>
-                      <li><a href="javascript:void(0)">Yearly</a></li>
-                      <li><a href="javascript:void(0)">Monthly</a></li>
-                      <li><a href="javascript:void(0)">Weekly</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card-body"> 
-              <ul>
-                <li class="group flex items-center group justify-between gap-3 first:pt-0 last:pb-0 first:border-none py-[13px] border-t border-border-light dark:border-border-dark dark:border-t"> 
-                  <div class="flex items-center gap-[10px] flex-[1_1_0]">
-                    <div class="overflow-hidden rounded-full object-cover sm:min-w-[38px]"><img class="object-cover w-10 h-10 min-w-10" src="assets/images/avatar/12.jpg" alt="event"/></div>
-                    <div class="flex-1"> <a href="email.html">
-                        <h4 class="transition-all text-xs font-semibold text-title line-clamp-1 group-hover:text-primary">Dmitriy Groshev</h4></a><span class="text-2xs font-semibold text-content line-clamp-1 mt-[4px]">Cody fisher create task on ERP management system</span>
-                    </div>
-                  </div><span class="min-w-fit badge text-3xs bg-gray-light text-title py-[7px] px-[13px] dark:bg-sidebar-dark2">2hr ago</span>
-                </li>
-                <li class="group flex items-center group justify-between gap-3 first:pt-0 last:pb-0 first:border-none py-[13px] border-t border-border-light dark:border-border-dark dark:border-t"> 
-                  <div class="flex items-center gap-[10px] flex-[1_1_0]">
-                    <div class="overflow-hidden rounded-full object-cover sm:min-w-[38px]"><img class="object-cover w-10 h-10 min-w-10" src="assets/images/avatar/13.jpg" alt="event"/></div>
-                    <div class="flex-1"> <a href="email.html">
-                        <h4 class="transition-all text-xs font-semibold text-title line-clamp-1 group-hover:text-primary">Kristin watson</h4></a><span class="text-2xs font-semibold text-content line-clamp-1 mt-[4px]">Kristin watson payment gateway needed on sellmokam</span>
-                    </div>
-                  </div><span class="min-w-fit badge text-3xs bg-gray-light text-title py-[7px] px-[13px] dark:bg-sidebar-dark2">4hr ago</span>
-                </li>
-                <li class="group flex items-center group justify-between gap-3 first:pt-0 last:pb-0 first:border-none py-[13px] border-t border-border-light dark:border-border-dark dark:border-t"> 
-                  <div class="flex items-center gap-[10px] flex-[1_1_0]">
-                    <div class="overflow-hidden rounded-full object-cover sm:min-w-[38px]"><img class="object-cover w-10 h-10 min-w-10" src="assets/images/avatar/14.jpg" alt="event"/></div>
-                    <div class="flex-1"> <a href="email.html">
-                        <h4 class="transition-all text-xs font-semibold text-title line-clamp-1 group-hover:text-primary">Janis Evans</h4></a><span class="text-2xs font-semibold text-content line-clamp-1 mt-[4px]">Jacob jones generate invoice on E-Commerce</span>
-                    </div>
-                  </div><span class="min-w-fit badge text-3xs bg-gray-light text-title py-[7px] px-[13px] dark:bg-sidebar-dark2">10 Jun</span>
-                </li>
-                <li class="group flex items-center group justify-between gap-3 first:pt-0 last:pb-0 first:border-none py-[13px] border-t border-border-light dark:border-border-dark dark:border-t"> 
-                  <div class="flex items-center gap-[10px] flex-[1_1_0]">
-                    <div class="overflow-hidden rounded-full object-cover sm:min-w-[38px]"><img class="object-cover w-10 h-10 min-w-10" src="assets/images/avatar/15.jpg" alt="event"/></div>
-                    <div class="flex-1"> <a href="email.html">
-                        <h4 class="transition-all text-xs font-semibold text-title line-clamp-1 group-hover:text-primary">Mukrani Pabelo</h4></a><span class="text-2xs font-semibold text-content line-clamp-1 mt-[4px]">Esther howard sent new logo on burger bro</span>
-                    </div>
-                  </div><span class="min-w-fit badge text-3xs bg-gray-light text-title py-[7px] px-[13px] dark:bg-sidebar-dark2">22 Jun</span>
-                </li>
-                <li class="group flex items-center group justify-between gap-3 first:pt-0 last:pb-0 first:border-none py-[13px] border-t border-border-light dark:border-border-dark dark:border-t"> 
-                  <div class="flex items-center gap-[10px] flex-[1_1_0]">
-                    <div class="overflow-hidden rounded-full object-cover sm:min-w-[38px]"><img class="object-cover w-10 h-10 min-w-10" src="assets/images/avatar/16.jpg" alt="event"/></div>
-                    <div class="flex-1"> <a href="email.html">
-                        <h4 class="transition-all text-xs font-semibold text-title line-clamp-1 group-hover:text-primary">Josephin Water</h4></a><span class="text-2xs font-semibold text-content line-clamp-1 mt-[4px]">Esther howard comment on QHI Media Project</span>
-                    </div>
-                  </div><span class="min-w-fit badge text-3xs bg-gray-light text-title py-[7px] px-[13px] dark:bg-sidebar-dark2">10 July</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
 @endsection
-        
+            

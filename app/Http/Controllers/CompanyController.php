@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Exports\ExportItemlist;
 use Illuminate\Http\Request;
 use App\Models\LoginModel;
+use App\Models\SidebarModel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -15,7 +17,8 @@ class CompanyController extends Controller
     public function index()
     {
         $fetchdata = LoginModel::where('flag', '0')->where('admin_role', 'company')->get();
-        return view('company.add',compact('fetchdata'));
+        $fetchsidebar = SidebarModel::where('sidebar_name','!=','admin')->where('sidebar_name','!=','company')->get();
+        return view('staff.company.add',compact('fetchdata','fetchsidebar'));
     }
     public function store(Request $request)
     {
@@ -46,9 +49,34 @@ class CompanyController extends Controller
                         $data['contact'] = $request->phone;
                         $data['admin_role'] = 'company';
                         $data['password'] = Hash::make($request->password);
-                        $inserted = LoginModel::insert($data);
+                        $inserted = LoginModel::insertGetId($data);
 
                         if(!empty($inserted)){
+
+                            $savedata['role_id'] = $inserted;
+                            $sidebars = $request->sidebar;
+                            foreach ($sidebars as $value) {
+            
+                                $read_val = "read_" . $value;
+                                $write_val = "write_" . $value;
+            
+                                $savedata['read_perm'] = $savedata['write_perm'] = 0;
+            
+                                if ($request->$read_val == 1) {
+                                    $savedata['read_perm'] = 1;
+                                }
+            
+                                if ($request->$write_val == 1) {
+                                    $savedata['write_perm'] = 1;
+                                }
+            
+                                $savedata['sidebar_id'] = $value;
+            
+                                if ($savedata['read_perm'] == '1' || $savedata['write_perm'] == '1') {
+                                    DB::table('sidebar_permission')->insert($savedata);
+                                }
+                            }
+                                
                             return response()->json(['code' => 200, 'message' => 'Company Added Successfully']);
                         }else{
                             return response()->json(['code' => 400, 'message' => 'Something Went wrong Try Again !']);

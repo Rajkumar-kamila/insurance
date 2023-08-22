@@ -27,7 +27,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(), [
-            'name' => 'required|string|max:200|regex:/^[a-zA-Z\s]+$/',
+            'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'required',
             'password' => 'required',
@@ -53,35 +53,9 @@ class AdminController extends Controller
                         $data['contact'] = $request->phone;
                         $data['admin_role'] = 'admin';
                         $data['password'] = Hash::make($request->password);
-                        $inserted = LoginModel::insertGetId($data);
-
+                        $inserted = LoginModel::insert($data);
 
                         if(!empty($inserted)){
-
-                            $savedata['user_id'] = $inserted;
-                            $sidebars = $request->sidebar;
-                            foreach ($sidebars as $value) {
-
-                                $read_val = "read_" . $value;
-                                $write_val = "write_" . $value;
-
-                                $savedata['read_perm'] = $savedata['write_perm'] = 0;
-
-                                if ($request->$read_val == 1) {
-                                    $savedata['read_perm'] = 1;
-                                }
-
-                                if ($request->$write_val == 1) {
-                                    $savedata['write_perm'] = 1;
-                                }
-
-                                $savedata['sidebar_id'] = $value;
-
-                                if ($savedata['read_perm'] == '1' || $savedata['write_perm'] == '1') {
-                                    DB::table('sidebar_permission')->insert($savedata);
-                                }
-                            }
-                            
                             return response()->json(['code' => 200, 'message' => 'Admin Added Successfully']);
                         }else{
                             return response()->json(['code' => 400, 'message' => 'Something Went wrong Try Again !']);
