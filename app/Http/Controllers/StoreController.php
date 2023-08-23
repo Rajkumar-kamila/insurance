@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Exports\ExportItemlist;
 use Illuminate\Http\Request;
 use App\Models\LoginModel;
+use App\Models\SidebarModel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -14,11 +16,12 @@ class StoreController extends Controller
     public function index()
     {
         $fetchdata = LoginModel::where('flag', '0')->where('admin_role', 'store')->get();
-        return view('store.add',compact('fetchdata'));
+        return view('staff.store.add',compact('fetchdata'));
     }
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(), [
+            'parent_id' => 'required',
             'name' => 'required|string|max:200|regex:/^[a-zA-Z\s]+$/',
             'email' => 'required|email',
             'phone' => 'required',
@@ -40,6 +43,7 @@ class StoreController extends Controller
 
                     // $pass_verify = Hash::check($request->password, $request->c_password);
                     if($request->password == $request->c_password){
+                        $data['parent_id'] = $request->parent_id;
                         $data['name'] = $request->name;
                         $data['email'] = $request->email;
                         $data['contact'] = $request->phone;

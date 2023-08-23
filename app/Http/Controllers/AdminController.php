@@ -27,6 +27,7 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         $validate = Validator::make($request->all(), [
+            'parent_id' => 'required',
             'name' => 'required|string',
             'email' => 'required|email',
             'phone' => 'required',
@@ -48,6 +49,7 @@ class AdminController extends Controller
 
                     
                     if($request->password == $request->c_password){
+                        $data['parent_id'] = $request->parent_id;
                         $data['name'] = $request->name;
                         $data['email'] = $request->email;
                         $data['contact'] = $request->phone;

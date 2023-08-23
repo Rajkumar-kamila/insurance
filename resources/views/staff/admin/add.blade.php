@@ -131,6 +131,7 @@
                 <div id="showsuccesmessage" style="color:rgb(28, 195, 28);text-align: center;font-size: 20px;"></div>
                 <form id="addadmin" method="post" class="form-validate is-alter">
                     @csrf()
+                    <input type="hidden" class="form-control"  id="parent_id" name="parent_id" value="{{ getuserdetail('id')}}" required>
                     <div class="form-group">
                         <label class="form-label" for="name">Name</label>
                         <div class="form-control-wrap">

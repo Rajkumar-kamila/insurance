@@ -1,137 +1,146 @@
-<!-- Sidebar Start -->
-<div class="page-sidebar sidebar-dark unique-sidebar">
-    <aside class="sidebar">
-        <div class="logo-wrapper"><a href="{{ url('/')}}">
-                <h3 class="text-white  ">Inslogin</h3>
-            </a>
-            <button class="sidebar-btn">
-                <svg class="w-6 h-6">
-                    <use href="{{ asset('assets/svg/sprite.svg#Category')}}"> </use>
-                </svg>
-            </button>
-        </div>
-        <div class="search-wrapper">
-            <div class="search-box">
-                <input class="search" placeholder="Search" type="search">
-                <svg class="w-5 h-5 cursor-pointer">
-                    <use href="{{ asset('assets/svg/sprite.svg#Search')}}"> </use>
-                </svg>
-            </div>
-        </div>
-        <nav class="sidebar-main">
-            <ul class="sidebar-links custom-scroll">
-                <li class="title">General</li>
-                <li class="sidebar-list"> 
-                    <a class="sidebar-link sidebar-title" href="{{url('/dashboard')}}"><span>
-                        <svg><use href="{{ asset('assets/svg/sprite.svg#Home')}}"> </use> </svg>
-                        <span class="sidebar-name">Dashboards</span></span>
-                    </a>
-                </li>
-
-                <li class="title">Staff Roles</li>
-                <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="javascript:void(0)"><span>
-                            <svg>
-                                <use href="{{ asset('assets/svg/sprite.svg#Folder')}}"> </use>
-                            </svg><span class="sidebar-name">Staff Management</span></span>
-                        <svg>
-                            <use href="{{ asset('assets/svg/sprite.svg#Arrow-Right-2')}}"> </use>
-                        </svg></a>
-                    <ul class="sidebar-submenu">
-                        
+<div class="nk-sidebar" data-content="sidebarMenu">
+    <div class="nk-sidebar-inner" data-simplebar>
+        <ul class="nk-menu nk-menu-md">
+            <li class="nk-menu-heading">
+                <h6 class="overline-title text-primary-alt">Dashboards</h6>
+            </li>
+            <li class="nk-menu-item">
+                <a href="{{url('/')}}" class="nk-menu-link">
+                    <span class="nk-menu-icon">
+                        <em class="icon ni ni-dashboard"></em>
+                    </span>
+                    <span class="nk-menu-text">Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="nk-menu-heading">
+                <h6 class="overline-title text-primary-alt">Staff Roles</h6>
+            </li>
+            
+            <li class="nk-menu-item has-sub">
+                <a href="#" class="nk-menu-link nk-menu-toggle">
+                    <span class="nk-menu-icon">
+                        <em class="icon ni ni-users"></em>
+                    </span>
+                    <span class="nk-menu-text">Staff Management</span>
+                </a>
+                <ul class="nk-menu-sub">
+                    @if(getuserdetail('role') == 'admin')
+                    @else
                         @if(checkpermission('1','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{ url('staff/admin')}}"><span>
-                            <svg>
-                                <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                            </svg><span class="sidebar-name">Admin</span></span></a>
+                        <li class="nk-menu-item">
+                            <a href="{{ url('staff/admin')}}" class="nk-menu-link">
+                                <span class="nk-menu-text">Admin</span>
+                            </a>
                         </li>
                         @endif
-                        
-                        @if(checkpermission('2','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('staff/company')}}"><span>
-                            <svg>
-                                <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                            </svg><span class="sidebar-name">Company</span></span></a>
-                        </li>
-                        @endif
+                    @endif
+                    
+                    @if(getuserdetail('role') == 'company')
+                    @else
+                    @if(checkpermission('2','read_perm'))
+                    <li class="nk-menu-item">
+                        <a href="{{ url('staff/company')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Company</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
 
-                        @if(checkpermission('3','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('staff/headoffice')}}"><span>
-                            <svg>
-                                <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                            </svg><span class="sidebar-name">Head Office</span></span></a>
-                        </li>
-                        @endif
-                        @if(checkpermission('4','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('staff/regionaloffice')}}"><span>
-                                    <svg>
-                                        <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                                    </svg><span class="sidebar-name">Regioanl Office</span></span></a>
-                        </li>
-                        @endif
-                        @if(checkpermission('5','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('staff/zonaloffice')}}"><span>
-                                    <svg>
-                                        <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                                    </svg><span class="sidebar-name">Zonal Office</span></span></a>
-                        </li>
-                        @endif
-                        @if(checkpermission('6','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('staff/store')}}"><span>
-                                    <svg>
-                                        <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                                    </svg><span class="sidebar-name">Store</span></span></a>
-                        </li>
-                        @endif
-                        @if(checkpermission('7','read_perm'))
-                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('staff/claim')}}"><span>
-                                    <svg>
-                                        <use href="{{ asset('assets/svg/sprite.svg#2-User')}}"> </use>
-                                    </svg><span class="sidebar-name">Claim</span></span></a>
-                        </li>
-                        @endif
-                    </ul>
-                </li>
-                <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="{{url('reports')}}"><span>
-                            <svg>
-                                <use href="{{ asset('assets/svg/sprite.svg#Location')}}"> </use>
-                            </svg><span class="sidebar-name">Reports</span></span>
-                    </a>
+                    @if(getuserdetail('role') == 'head_office')
+                    @else
+                    @if(checkpermission('3','read_perm'))
+                    <li class="nk-menu-item">
+                        <a href="{{url('staff/headoffice')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Head Office</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
 
-                </li>
+                    @if(getuserdetail('role') == 'regional_office')
+                    @else
+                    @if(checkpermission('4','read_perm'))
+                    <li class="nk-menu-item">
+                        <a href="{{url('staff/regionaloffice')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Regioanl Office</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
 
+                    @if(getuserdetail('role') == 'zonal_office')
+                    @else
+                    @if(checkpermission('5','read_perm'))
+                    <li class="nk-menu-item">
+                        <a href="{{url('staff/zonaloffice')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Zonal Office</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
 
-                <!-- <li class="title">Miscellaneous</li>
-        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="javascript:void(0)"><span> 
-                <svg> 
-                <use href="{{ asset('assets/svg/sprite.svg#Folder')}}"> </use>
-                </svg><span class="sidebar-name">Blog</span></span>
-            <svg> 
-                <use href="{{ asset('assets/svg/sprite.svg#Arrow-Right-2')}}"> </use>
-            </svg></a>
-            <ul class="sidebar-submenu"> 
-            <li> <a href="blog-grid.html">Blog Grid</a></li>
-            <li> <a href="blog-detail.html">Blog Detail</a></li>
-            </ul>
-        </li>
-        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="knowledgebase.html"><span> 
-                <svg> 
-                <use href="{{ asset('assets/svg/sprite.svg#Scan')}}"> </use>
-                </svg><span class="sidebar-name">Knowledgebase</span></span></a>
-        </li>
-        <li class="sidebar-list"> <a class="sidebar-link sidebar-title" href="javascript:void(0)"><span> 
-                <svg> 
-                <use href="{{ asset('assets/svg/sprite.svg#Location')}}"> </use>
-                </svg><span class="sidebar-name">Map</span></span>
-            <svg> 
-                <use href="{{ asset('assets/svg/sprite.svg#Arrow-Right-2')}}"> </use>
-            </svg></a>
-            <ul class="sidebar-submenu"> 
-            <li> <a href="maps-js.html">Maps Js</a></li>
-            <li> <a href="data-map.html">Data Map</a></li>
-            </ul>
-        </li> -->
-            </ul>
-        </nav>
-    </aside>
+                    @if(getuserdetail('role') == 'store')
+                    @else
+                    @if(checkpermission('6','read_perm'))
+                    <li class="nk-menu-item">
+                        <a href="{{url('staff/store')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Store</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
+
+                    @if(getuserdetail('role') == 'claim')
+                    @else
+                    @if(checkpermission('7','read_perm'))
+                    <li class="nk-menu-item">
+                        <a href="{{url('staff/claim')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Claim</span>
+                        </a>
+                    </li>
+                    @endif
+                    @endif
+
+                </ul>
+            </li>
+            <li class="nk-menu-item">
+                <a href="{{url('reports')}}" class="nk-menu-link">
+                    <span class="nk-menu-icon">
+                        <em class="icon ni ni-coins"></em>
+                    </span>
+                    <span class="nk-menu-text">Reports</span>
+                </a>
+            </li>
+            <li class="nk-menu-item has-sub">
+                <a href="#" class="nk-menu-link nk-menu-toggle">
+                    <span class="nk-menu-icon">
+                        <em class="icon ni ni-tile-thumb"></em>
+                    </span>
+                    <span class="nk-menu-text">Master</span>
+                </a>
+                <ul class="nk-menu-sub">
+                    
+                    <li class="nk-menu-item">
+                        <a href="{{ url('master/brands/')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Brand</span>
+                        </a>
+                    </li>
+                    <li class="nk-menu-item">
+                        <a href="{{ url('master/category/')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Category</span>
+                        </a>
+                    </li>
+                    
+                    <li class="nk-menu-item">
+                        <a href="{{ url('master/model/')}}" class="nk-menu-link">
+                            <span class="nk-menu-text">Model</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
 </div>
-<!-- Sidebar End -->

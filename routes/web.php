@@ -9,6 +9,9 @@ use App\Http\Controllers\RegioanlofficeController;
 use App\Http\Controllers\ZonalofficeController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\ClaimController;
+use App\Http\Controllers\BrandsController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ModelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,19 +50,19 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('/edit', [CompanyController::class, 'edit']);
             Route::post('/update', [CompanyController::class, 'update']);
         });
-        Route::group(['prefix' => '/head_office'], function () {
+        Route::group(['prefix' => '/headoffice'], function () {
             Route::get('', [HeadofficeController::class, 'index']);
             Route::post('/store', [HeadofficeController::class, 'store']);
             Route::post('/edit', [HeadofficeController::class, 'edit']);
             Route::post('/update', [HeadofficeController::class, 'update']);
         });
-        Route::group(['prefix' => '/regional_office'], function () {
+        Route::group(['prefix' => '/regionaloffice'], function () {
             Route::get('', [RegioanlofficeController::class, 'index']);
             Route::post('/store', [RegioanlofficeController::class, 'store']);
             Route::post('/edit', [RegioanlofficeController::class, 'edit']);
             Route::post('/update', [RegioanlofficeController::class, 'update']);
         });
-        Route::group(['prefix' => '/zonal_office'], function () {
+        Route::group(['prefix' => '/zonaloffice'], function () {
             Route::get('', [ZonalofficeController::class, 'index']);
             Route::post('/store', [ZonalofficeController::class, 'store']);
             Route::post('/edit', [ZonalofficeController::class, 'edit']);
@@ -78,8 +81,28 @@ Route::group(['middleware' => 'auth'], function () {
             Route::post('/update', [ClaimController::class, 'update']);
         });
 
+    });
 
-
+    Route::group(['prefix' => '/master'], function () {
+        Route::group(['prefix' => '/brands'], function () {
+            Route::get('', [BrandsController::class, 'index']);
+            Route::post('/store', [BrandsController::class, 'store']);
+            Route::post('/edit', [BrandsController::class, 'edit']);
+            Route::post('/update', [BrandsController::class, 'update']);
+        });
+        Route::group(['prefix' => '/category'], function () {
+            Route::get('', [CategoryController::class, 'index']);
+            Route::post('/store', [CategoryController::class, 'store']);
+            Route::post('/edit', [CategoryController::class, 'edit']);
+            Route::post('/update', [CategoryController::class, 'update']);
+        });
+        Route::group(['prefix' => '/model'], function () {
+            Route::get('', [ModelController::class, 'index']);
+            Route::post('/store', [ModelController::class, 'store']);
+            Route::post('/edit', [ModelController::class, 'edit']);
+            Route::post('/update', [ModelController::class, 'update']);
+        });
+        
     });
 
     
